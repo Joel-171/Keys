@@ -1,0 +1,141 @@
+Leaderboard.html
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - Keys</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        footer nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        footer nav ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* Leaderboard Page Specific Styles */
+        body.leaderboard-body {
+            background-color: #1e3c72;
+            color: #f7ecec;
+        }
+        .leaderboard {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #2a5298;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        .leaderboard-item .avatar {
+            display: flex;
+            align-items: center;
+        }
+        .leaderboard-item .avatar img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .leaderboard-item .user-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .leaderboard-item .verified {
+            margin-left: 5px;
+            color: #1da1f2;
+        }
+ .leaderboard-item .rank {
+            font-size: 24px;
+            font-weight: bold;
+ min-width: 30px;
+            text-align: center;
+        }
+        .rank-1 { color: gold; }
+        .rank-2 { color: silver; }
+ .rank-3 { color: #cd7f32; } /* bronze */
+        .leaderboard-notes {
+            text-align: center;
+            margin-top: 20px;
+ font-style: italic;
+        }
+ </style>
+ </head>
+ <body class="leaderboard-body">
+    <header>
+        <h1>Leaderboard</h1>
+        <p>Top 100 Holders of Keys</p>
+    </header>
+    <section class="leaderboard">
+        <div class="leaderboard-item">
+            <div class="avatar">
+                <img src="placeholder-avatar.jpg" alt="User1">
+                <span class="user-name">User1 <span class="verified">✓</span></span>
+            </div>
+            <span class="rank rank-1">1</span>
+            <span class="token-count">1500 Tokens</span>
+        </div>
+        <div class="leaderboard-item">
+            <div class="avatar">
+                <img src="placeholder-avatar.jpg" alt="User2">
+                <span class="user-name">User2</span>
+            </div>
+            <span class="rank rank-2">2</span>
+            <span class="token-count">1200 Tokens</span>
+        </div>
+        <div class="leaderboard-item">
+            <div class="avatar">
+                <img src="placeholder-avatar.jpg" alt="User3">
+                <span class="user-name">User3</span>
+            </div>
+            <span class="rank rank-3">3</span>
+            <span class="token-count">1100 Tokens</span>
+        </div>
+    </section>
+    <section class="leaderboard-notes">
+        <p>Leaderboard updates every 24 hours. Top 3 holders get bonus rewards!</p>
+    </section>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="boost.html">Boost</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="invite.html">Invite</a></li>
+                <li><a href="wallet.html">Wallet</a></li>
+                <li><a href="stats.html">Stats</a></li>
+            </ul>
+ </nav>
+    </footer>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
+ </body>
+ </html>

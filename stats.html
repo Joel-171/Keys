@@ -1,0 +1,101 @@
+Stats.html
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats - Keys</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        footer nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        footer nav ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* Stats Page Specific Styles */
+        body.stats-body {
+            background: linear-gradient(135deg, #2b1055, #7597de);
+            color: white;
+        }
+        .stats-card {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+        }
+        .stats-card .total-amount {
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .stats-card .stat-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 18px;
+        }
+        .stats-card .stat-item .icon {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+ <body class="stats-body">
+    <header>
+ <h1>Your Stats Overview</h1>
+    </header>
+ <section class="stats-card stats-summary">
+        <h2>General Stats</h2>
+ <div class="total-amount">5000 Keys</div>
+        <ul>
+            <li class="stat-item"><span class="icon"> </span>Total Players: <span>150</span></li>
+            <li class="stat-item"><span class="icon"> </span>Daily Active Users: <span>80</span></li>
+            <li class="stat-item"><span class="icon"> </span>Users Online: <span>10</span></li>
+            <li class="stat-item"><span class="icon"> </span>Percentage Mined: <span>15%</span></li>
+        </ul>
+    </section>
+    <section class="stats-card additional-stats">
+        <h2>Additional Info:</h2>
+        <p>Keep an eye on your progress. The more actions you take, the more you'll earn. Compete 
+with others to climb the leaderboard!</p>
+    </section>
+    <footer>
+ <nav>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li><a href="boost.html">Boost</a></li>
+               <li><a href="tasks.html">Tasks</a></li>
+               <li><a href="invite.html">Invite</a></li>
+               <li><a href="leaderboard.html">Leaderboard</a></li>
+               <li><a href="wallet.html">Wallet</a></li>
+            </ul>
+ </nav>
+    </footer>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
+ </body>
+ </html>

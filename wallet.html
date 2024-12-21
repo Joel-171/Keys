@@ -1,0 +1,96 @@
+Wallet.html
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Keys</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        footer nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        footer nav ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
+ /* Wallet Page Specific Styles */
+ body.wallet-body {
+ background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+        }
+        .wallet-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+        .wallet-status {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .wallet-button {
+            background-color: #f8a400;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+        .wallet-button:hover {
+            background-color: #e59400;
+        }
+    </style>
+ </head>
+ <body class="wallet-body">
+    <header>
+        <h1>Your Wallet</h1>
+    </header>
+    <section class="wallet-card">
+        <div id="wallet-status" class="wallet-status">
+            Wallet Status: Not connected 
+        </div>
+        <button id="connect-wallet" class="wallet-button">Connect Wallet</button>
+    </section>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="boost.html">Boost</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="invite.html">Invite</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="stats.html">Stats</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
+ </body>
+ </html>

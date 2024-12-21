@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, 
+maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Keys - Telegram Mini App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #2c75d4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .balance {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #57c2f3;
+            color: #171a16;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 1000px;
+            margin-bottom: 10px;
+            width: 50%;
+            display: block;
+            margin: 10px auto;
+        }
+        .button:disabled {
+            background-color: #444343;
+            cursor: not-allowed;
+        }
+        .timer {
+            background-color: #57c2f3; /* Same background color as buttons */
+            color: #171a16;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: default; /* Not clickable */
+            border-radius: 1000px;
+            width: 50%;
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+        }
+        /* Bottom navigation styling */
+        nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ebe1e1;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            box-shadow: 0 -2px 5px rgba(248, 245, 245, 0.3);
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            justify-content: space-around;
+        }
+        nav ul li {
+            flex: 1;
+        }
+        nav ul li a {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            background-color: #34a8df;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        nav ul li a.active {
+            background-color: #007BFF;
+        }
+        /* Ensure page content doesn't overlap with the fixed navigation */
+        body {
+            margin-bottom: 60px;
+        }
+        /* Style for the token image */
+        .token-image {
+            display: block;
+            margin: 0 auto;
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Keys</h1>
+        </div>
+        <!-- Token image -->
+        <img src="keys.png" alt="Token Image" class="token-image">
+        <div class="balance">Balance: <span id="balance">0</span> Keys</div>
+        <button id="claimButton" class="button">Claim Keys</button>
+        <button id="withdrawButton" class="button" disabled>Withdraw Keys</button>
+        <div class="timer" id="timer">08:00:00</div> <!-- Timer styled as a button -->
+    </div>
+    
+    <!-- Bottom navigation tabs -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="boost.html">Boost</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+            <li><a href="invite.html">Invite</a></li>
+            <li><a href="leaderboard.html">Leaderboard</a></li>
+            <li><a href="wallet.html">Wallet</a></li>
+            <li><a href="stats.html">Stats</a></li>
+        </ul>
+    </nav>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
+    <script>
+        let timer; // Timer variable
+        let duration = 28800; // 8 hours in seconds
+        const timerDisplay = document.getElementById('timer');
+        const claimButton = document.getElementById('claimButton');
+
+        function updateTimer() {
+            const hours = Math.floor(duration / 3600);
+            const minutes = Math.floor((duration % 3600) / 60);
+            const seconds = duration % 60;
+
+            timerDisplay.textContent = 
+                String(hours).padStart(2, '0') + ':' + 
+                String(minutes).padStart(2, '0') + ':' + 
+                String(seconds).padStart(2, '0');
+
+            if (duration > 0) {
+                duration--;
+            } else {
+                clearInterval(timer);
+            }
+        }
+
+        function startTimer() {
+            clearInterval(timer); // Clear any existing timer
+            duration = 28800; // Reset to 8 hours
+            updateTimer();
+            timer = setInterval(updateTimer, 1000); // Update every second
+        }
+
+        // Claim button click event
+        claimButton.addEventListener('click', function() {
+            // Logic for claiming keys
+            let balance = document.getElementById('balance');
+            balance.textContent = parseInt(balance.textContent) + 1; // Increment balance by 1 as an example
+            startTimer(); // Restart the timer
+        });
+
+        // Start the timer on page load
+        startTimer();
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+Invite.html
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invite Friends - Keys</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        footer nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        footer nav ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
+        /* Invite Page Specific Styles */
+        body.invite-body {
+            background: #264b91;
+            color: rgb(238, 240, 232);
+        }
+        .friends-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+        }
+        .invite-button {
+            background-color: #f8a400;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 15px 0;
+            transition: background-color 0.3s ease;
+        }
+        .invite-button:hover {
+            background-color: #e59400;
+        }
+        .friend-list {
+            margin-top: 20px;
+        }
+        .friend-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .friend-item .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        .friend-item .user-name {
+            flex-grow: 1;
+        }
+        .friend-item .bonus-earned {
+            font-size: 14px;
+            color: #f8a400;
+        }
+    </style>
+ </head>
+ <body class="invite-body">
+    <header>
+        <h1>Invite Friends</h1>
+    </header>
+    <section class="friends-card invite-details">
+        <p>Earn rewards by inviting friends to join the Keys platform. The more friends you invite, the 
+more tokens you can earn!</p>
+        <p>Use your unique referral link to share:</p>
+        <input type="text" value="https://keysapp.com/invite/12345" readonly>
+        <button class="invite-button copy-button">Copy Link</button>
+    </section>
+    <section class="friends-card invited-friends">
+        <h2>Your Invited Friends</h2>
+        <div class="friend-list">
+            <div class="friend-item">
+                <img src="placeholder-avatar.jpg" alt="Friend1" class="avatar">
+                <span class="user-name">Friend1</span>
+                <span class="bonus-earned">50 Tokens Earned</span>
+            </div>
+            <div class="friend-item">
+                <img src="placeholder-avatar.jpg" alt="Friend2" class="avatar">
+                <span class="user-name">Friend2</span>
+                <span class="bonus-earned">100 Tokens Earned</span>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="boost.html">Boost</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="leaderboard.html">Leaderboard</a></li>
+                <li><a href="wallet.html">Wallet</a></li>
+                <li><a href="stats.html">Stats</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="app.js"></script>
+ </body>
+ </html>
